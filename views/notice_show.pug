@@ -20,14 +20,15 @@ block content
             #main.container
             header.memberTitle
               h2= notice.title
+            hr
               
             p
               pre= notice.content
             
             br
 
-            
-            div
-              button.n_writebtn(onclick=`location.href='/notice/delete/${notice._id}'`) 삭제
+            if currentUser  
+              div
+                button.n_writebtn(onclick=`location.href='/notice/delete/${notice._id}'`) 삭제
 
-              button.n_writebtn(onclick=`location.href='/notice/edit/${notice._id}'`) 수정
+                button.n_writebtn(onclick=`location.href='/notice/edit/${notice._id}'`) 수정

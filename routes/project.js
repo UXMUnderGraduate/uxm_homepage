@@ -28,4 +28,11 @@ router.post('/upload',function(req,res){
     res.redirect('/project');
   });
 });
+
+router.get('/delete/:id', function (req, res) {
+	Project.deleteOne({ _id: req.params.id }, function (err, project) {
+		if (err) return res.json(err);
+		res.redirect('/project');
+	});
+});
 module.exports = router;
