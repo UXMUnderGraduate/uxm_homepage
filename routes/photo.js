@@ -36,9 +36,9 @@ router.get('/', function (req, res, next) {
 	Photo.find(function (err, photo) {
 		photo.sort(function (a, b) {
 			if (a.date > b.date) {
-				return -1;
+				return 1;
 			}
-			return 1;
+			return -1;
 		});
 		res.render('photo', { photos: photo });
 	});
